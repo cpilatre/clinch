@@ -1,5 +1,5 @@
 # Clinch
-A command line app in RUST to retrieve Sinch inbound messages
+A command line app in RUST to retrieve Sinch inbound messages.
 
 ## Usage
 ```bash
@@ -25,4 +25,36 @@ OPTIONS:
     -z, --page-size <page-size>      Number of messages loaded [default: 10]
         --plan <plan>                Customer plan
         --start-date <start-date>    Only list messages received at or after this date time (default now - 24h)
+```
+
+## Configuration
+Before use clinch for the first time, you must create a configuration file (by default `.sinch/config.json`) in which you describe you plans and maps to display services.
+
+```json
+{
+    "services_plan": [
+        { 
+            "plan_name": "PROD",
+            "plan_id": "APP_PROD",
+            "bearer": "...xxx...",
+            "default": true
+        },
+        {
+            "plan_name": "DEV",
+            "plan_id": "APP_DEV",
+            "bearer": "...xxx...",
+            "default": false
+        }
+    ],
+    "services_map": [
+        {
+            "number": "33123456789",
+            "display": "service x"
+        },
+        {
+            "number": "33123456789",
+            "display": "service y"
+        }
+    ]
+}
 ```

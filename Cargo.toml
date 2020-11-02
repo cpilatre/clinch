@@ -1,0 +1,19 @@
+[package]
+name = "clinch"
+version = "0.1.8"
+authors = ["Claude Pilatre"]
+edition = "2018"
+description = "A command line app to retrieve Sinch inbound messages"
+license = "MIT"
+keywords = ["cli", "sinch"]
+categories = ["command-line-utilities"]
+
+[dependencies]
+reqwest = { version = "0.10.8", features = ["blocking"] }
+serde_json = "1.0.59"
+serde = { version = "1.0.117", features = ["derive"] }
+structopt = "0.3.20"
+console = "0.13.0"
+base64 = "0.13.0"
+chrono = "0.4.19"
+num_cpus = "1.13.0"
